@@ -5,25 +5,26 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  resource:
+  resources:
     requests:
       storage: 10Gi
   storageClassName: standard-rwo
+  
+--- 
 
-  ---    
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mysql
+    name: mysql
     spec:
-      selector:
+     selector:
      matchLabels:
       app: mysql
-    template:
+template:
       metadata:
         labels:
           app: mysql
-      spec:
+        spec:
         containers:
         -image: fq1444/projeto-backend:1.0
         args: 
@@ -36,11 +37,11 @@ metadata:
 
         volumeMounts:
          - name: mysql-dados
-         mountPath: /var/lib/mysql/
+           mountPath: /var/lib/mysql/
       volumes:  
        - name: mysql-dados
          persistentVolumeClaim:
-          claimName: mysql-dados
+           claimName: mysql-dados
 ---
 apiVersion: apps/v1
 kind: Deployment
