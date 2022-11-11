@@ -16,3 +16,5 @@ kubectl apply -f ./services.yml
 echo "criando os deployment"
 
 kubectl apply -f ./deployment.yml
+kubectl apply -f ./deployment2.yml
+kubectl apply -f ./deployment3.yml

@@ -1,3 +1,4 @@
+#criar o lodbalancer
 apiVersion: v1
 kind: Service
 metadata:
@@ -11,7 +12,7 @@ spec:
   type: LoadBalancer
 
 ---
-
+#criando serviço de conexao
 apiVersion: v1
 kind: Service
 metadata:
